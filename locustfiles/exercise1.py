@@ -10,7 +10,7 @@ class Exercise1Tasks(SequentialTaskSet):
     def GET_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise1_1359742899_8059969736143727959(self):
         response = self.client.get(
             url='/exercises/exercise1',
-            name='10 /exercises/exercise1',
+            name='10-10 /exercises/exercise1',
             timeout=30, allow_redirects=False,
             verify=False,
             headers={'referer': 'https://antycaptcha.amberteam.pl/', 'upgrade-insecure-requests': '1',
@@ -28,7 +28,7 @@ class Exercise1Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise1_button2_2616658608_7104982136376662838(
             self):
         response = self.client.post(url=f'/exercises/exercise1/button{self.button1}',
-                                    name='20 /exercises/exercise1/button1', timeout=30, verify=False,
+                                    name='10-20 /exercises/exercise1/button1', timeout=30, verify=False,
                                     allow_redirects=False, headers={'accept': 'application/json, text/*',
                                                                     'content-type': 'application/json; charset=utf-8',
                                                                     'referer': 'https://antycaptcha.amberteam.pl/exercises/exercise1?seed=c59b002c-b9f2-4f8c-91a0-980eeb80dbb8',
@@ -41,7 +41,7 @@ class Exercise1Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise1_button2_2616658608_5732882860546841492(
             self):
         response = self.client.post(url=f'/exercises/exercise1/button{self.button2}',
-                                    name='30 /exercises/exercise1/button2', timeout=30, verify=False,
+                                    name='10-30 /exercises/exercise1/button2', timeout=30, verify=False,
                                     allow_redirects=False, headers={'accept': 'application/json, text/*',
                                                                     'content-type': 'application/json; charset=utf-8',
                                                                     'referer': 'https://antycaptcha.amberteam.pl/exercises/exercise1?seed=c59b002c-b9f2-4f8c-91a0-980eeb80dbb8',
@@ -54,7 +54,7 @@ class Exercise1Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise1_button2_2616658608_6717462467804921238(
             self):
         response = self.client.post(url=f'/exercises/exercise1/button{self.button3}',
-                                    name='40 /exercises/exercise1/button3', timeout=30, verify=False,
+                                    name='10-40 /exercises/exercise1/button3', timeout=30, verify=False,
                                     allow_redirects=False, headers={'accept': 'application/json, text/*',
                                                                     'content-type': 'application/json; charset=utf-8',
                                                                     'referer': 'https://antycaptcha.amberteam.pl/exercises/exercise1?seed=c59b002c-b9f2-4f8c-91a0-980eeb80dbb8',
@@ -67,7 +67,7 @@ class Exercise1Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise1_solution_2814839647_2347838174168288982(
             self):
         with self.client.post(url='/exercises/exercise1/solution',
-                              name='50 /exercises/exercise1/solution',
+                              name='10-50 /exercises/exercise1/solution',
                               timeout=30,
                               catch_response=True,
                               verify=False,
@@ -82,6 +82,10 @@ class Exercise1Tasks(SequentialTaskSet):
             if trail != 'OK. Good answer':
                 response.failure('Not a good answer.')
             pass
+
+    @task
+    def last(self):
+        self.interrupt()
 
 
 # just for debugging
