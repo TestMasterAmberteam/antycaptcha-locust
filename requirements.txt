@@ -1,0 +1,5 @@
+locust
+locust-plugins
+har-transformer
+lxml
+faker
