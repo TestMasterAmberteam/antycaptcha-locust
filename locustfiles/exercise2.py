@@ -46,6 +46,7 @@ class Exercise2Tasks(SequentialTaskSet):
                               name='20-30 /exercises/exercise2/solution',
                               timeout=30,
                               allow_redirects=False,
+                              catch_response=True,
                               verify=False,
                               headers={'accept': 'application/json, text/*',
                                        'content-type': 'application/json; charset=UTF-8',
