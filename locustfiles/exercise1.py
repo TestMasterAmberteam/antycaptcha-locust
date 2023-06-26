@@ -1,5 +1,5 @@
-from locust import HttpUser, between, SequentialTaskSet, task, FastHttpUser
-from locust_plugins import run_single_user
+from locust import HttpUser, between, SequentialTaskSet, task, FastHttpUser, run_single_user
+import locust_plugins
 from lxml import html
 
 
