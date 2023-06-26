@@ -1,4 +1,4 @@
-from locust import SequentialTaskSet, HttpUser, task, between, FastHttpUser, run_single_user
+from locust import SequentialTaskSet, HttpUser, task, between, un_single_user
 import locust_plugins
 from lxml import html
 
@@ -9,7 +9,7 @@ class Exercise2Tasks(SequentialTaskSet):
     @task
     def GET_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise2_1359808436_6391876201501907287(self):
         response = self.client.get(
-            path='/exercises/exercise2',
+            url='/exercises/exercise2',
             name='20-10 /exercises/exercise2',
             timeout=30,
             allow_redirects=False,
@@ -27,7 +27,7 @@ class Exercise2Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise2_button1_2617182896_3188366066458871254(
             self):
         response = self.client.post(
-            path='/exercises/exercise2/button1',
+            url='/exercises/exercise2/button1',
             name='20-20 /exercises/exercise2/button1',
             timeout=30,
             allow_redirects=False,
@@ -45,7 +45,7 @@ class Exercise2Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise2_solution_2815495008_640161414438082191(
             self):
         with self.client.post(
-                path='/exercises/exercise2/solution',
+                url='/exercises/exercise2/solution',
                 name='20-30 /exercises/exercise2/solution',
                 timeout=30,
                 allow_redirects=False,

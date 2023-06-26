@@ -1,4 +1,4 @@
-from locust import SequentialTaskSet, task, between, FastHttpUser, run_single_user
+from locust import SequentialTaskSet, task, between, HttpUser, run_single_user
 import locust_plugins
 from lxml import html
 
@@ -9,7 +9,7 @@ class Exercise3Tasks(SequentialTaskSet):
     @task
     def GET_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise3_1359873973_7117410998266986988(self):
         response = self.client.get(
-            path='/exercises/exercise3',
+            url='/exercises/exercise3',
             name='30-10 /exercises/exercise3',
             timeout=30,
             allow_redirects=False,
@@ -27,7 +27,7 @@ class Exercise3Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise3_dropdown_2807237457_5053799924764131226(
             self):
         response = self.client.post(
-            path='/exercises/exercise3/dropdown',
+            url='/exercises/exercise3/dropdown',
             name='30-20 /exercises/exercise3/dropdown',
             timeout=30,
             verify=False,
@@ -45,7 +45,7 @@ class Exercise3Tasks(SequentialTaskSet):
     def POST_https_antycaptcha_amberteam_pl_2022377847__exercises_exercise3_solution_2816150369_3087939721231510724(
             self):
         with self.client.post(
-                path='/exercises/exercise3/solution',
+                url='/exercises/exercise3/solution',
                 name='30-30 /exercises/exercise3/solution',
                 timeout=30,
                 catch_response=True,
