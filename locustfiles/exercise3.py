@@ -69,7 +69,7 @@ class Exercise3Tasks(SequentialTaskSet):
 
 
 if __name__ == '__main__':
-    class Exercise3(FastHttpUser):
+    class Exercise3(HttpUser):
         tasks = [Exercise3Tasks]
         host = 'https://antycaptcha.amberteam.pl'
 
